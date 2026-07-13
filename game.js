@@ -10,7 +10,7 @@ var box9 = document.getElementById('box9');
 
 var winingShow = document.getElementById('wining');
 
-var count = 0;
+var count = 1;
 var text = 'O'
 
 function game(input) {
@@ -64,9 +64,9 @@ function print(input) {
 
 function textChanger() {
     if (count % 2 === 0) {
-        text = 'O';
+        text = 'X';
     } else {
-        text = 'X'
+        text = 'O'
     }
 }
 
@@ -80,46 +80,38 @@ function toEmpty() {
     box7.innerHTML = ''
     box8.innerHTML = ''
     box9.innerHTML = ''
-    count = 0;
+    count = 1;
+    text = 'O'
 }
 
 function winer() {
     if (box1.innerHTML !== '' && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML) {
         winingShow.innerHTML = text + ' is winer!';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box1.innerHTML !== '' && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box2.innerHTML !== '' && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box3.innerHTML !== '' && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box4.innerHTML !== '' && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box7.innerHTML !== '' && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box1.innerHTML !== '' && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     } else if (box7.innerHTML !== '' && box7.innerHTML === box5.innerHTML && box7.innerHTML === box3.innerHTML) {
         winingShow.innerHTML = text + ' is winer';
-        setTimeout(toEmpty, 1500);
-        text = 'O';
-    } else if (count === 9) {
+        setTimeout(toEmpty, 700);
+    } else if (count === 10) {
         winingShow.innerHTML = 'Match Draw!'
-        setTimeout(toEmpty, 1500);
-        text = 'O';
+        setTimeout(toEmpty, 700);
     }
 }
 
